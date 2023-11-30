@@ -9,9 +9,9 @@ function MainPage() {
   const [view, setView] = useState("");
   const { isUserLoggedIn } = useUser();
   return (
-    <main className={`pt-14 ${view == 'card' ? 'lg:px-20' : 'w-full'} px-0 h-auto ${isUserLoggedIn ? 'bg-[#dae0e6] dark:bg-[#030303] lg:px-0 w-full' : 'dark:bg-[#030303] dark:text-white'}`}>
+    <main className={`pt-14  px-0 h-auto ${isUserLoggedIn ? 'bg-[#dae0e6] dark:bg-[#030303] lg:px-0 w-full' : 'dark:bg-[#030303] dark:text-white lg:px-10'}`}>
       {!isUserLoggedIn ? (
-        <div className="flex justify-center gap-6">
+        <div className={`flex justify-center gap-6 ${view == 'card' ? '' : 'w-full'}`}>
           <HomePage setView={setView} view={view} />
           <PopularComunities view={view} />
         </div>
@@ -19,7 +19,6 @@ function MainPage() {
         <div className="flex justify-center gap-4 py-5 lg:px-6 px-2">
           <HomePageWhenUserLoggedIn setView={setView} />
           <HomeRightSide />
-          
         </div>
       )}
 

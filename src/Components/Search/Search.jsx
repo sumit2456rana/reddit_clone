@@ -45,7 +45,7 @@ function Search() {
     }
     return (
         <div className={`${isUserLoggedIn ? "w-[34%]" : "lg:w-[50%] w-[40%] sm:w-[60%]"}`}>
-            <div onClick={handleInputClick} ref={sugesstionRef} className={`${showSuggestion ? 'bg-search py-[11.5px] rounded-b-none' : 'bg-search'} fixed my-2 top-0 hover:bg-searchHover dark:hover:bg-transparent dark:hover:border-white dark:border dark:border-darkBorder dark:bg-inputDark ${isUserLoggedIn ? 'w-[34%]' : 'lg:w-[50%] sm:w-[60%] w-[38%]'} px-3 py-2 flex items-center rounded-3xl`}>
+            <div onClick={handleInputClick} ref={sugesstionRef} className={` fixed my-2 top-0 bg-searchHover dark:hover:bg-transparent dark:hover:border-white dark:border dark:border-darkBorder dark:bg-inputDark ${isUserLoggedIn ? 'w-[34%]' : 'lg:w-[50%] sm:w-[60%] w-[38%]'} px-3 py-2 flex items-center rounded-3xl`}>
                 <SearchOutlinedIcon className="font-light" />
                 <input
                     value={query}
@@ -63,7 +63,7 @@ function Search() {
                     <CancelOutlinedIcon />
                 </div>
             </div>
-            {showSuggestion && <div ref={sugesstionRef}><SearchSuggestions /></div>}
+            {/* {showSuggestion && <div ref={sugesstionRef}><SearchSuggestions /></div>} */}
         </div>
     );
 }

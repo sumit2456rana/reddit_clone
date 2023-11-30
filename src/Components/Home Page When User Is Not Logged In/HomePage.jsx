@@ -40,7 +40,7 @@ function HomePage({ setView, view }) {
     setPage((currentPage) => currentPage + 1);
   }
   return (
-    <div className={`${view === 'card' ? 'lg:w-[65%] w-full' : 'w-full'}`}>
+    <div className={`${view === 'card' ? 'lg:w-[65%] w-full' : 'w-[100%]'}`}>
       <CreatePost setView={setView} />
 
       <InfiniteScroll

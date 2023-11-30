@@ -18,7 +18,7 @@ import TvOutlinedIcon from '@mui/icons-material/TvOutlined';
 import StarBorderOutlinedIcon from '@mui/icons-material/StarBorderOutlined';
 import HelpOutlineOutlinedIcon from '@mui/icons-material/HelpOutlineOutlined';
 import { useUser } from "../../Provider/UserProvider";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { usePopup } from "../../Provider/PopUpProvider";
 function SideBar() {
     const { isUserLoggedIn } = useUser();
@@ -68,9 +68,14 @@ function SideBar() {
 
 function Home() {
     const [selected, setSelected] = useState("home");
+    const navigate = useNavigate();
+    const handleHomeClick = () => {
+        setSelected("home");
+        navigate('/');
+    }
     return (
         <>
-            <div onClick={() => setSelected("home")} className={`flex dark:hover:bg-darkBgHover gap-4 py-2 px-5 rounded-md hover:bg-[#EAEDEF] cursor-pointer ${selected == 'home' ? "bg-[#EAEDEF] dark:bg-darkBgHover" : ""}`}>
+            <div onClick={handleHomeClick} className={`flex dark:hover:bg-darkBgHover gap-4 py-2 px-5 rounded-md hover:bg-[#EAEDEF] cursor-pointer ${selected == 'home' ? "bg-[#EAEDEF] dark:bg-darkBgHover" : ""}`}>
                 <img className="dark:brightness-0 dark:invert-[1]" src={selected == "home" ? homeFilledIcon : homeOutlinedIcon} />
                 <span>Home</span>
             </div>

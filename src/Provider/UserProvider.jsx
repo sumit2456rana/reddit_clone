@@ -19,6 +19,7 @@ export function UserProvider({children}) {
         setAuthToken(null);
         sessionStorage.removeItem('user');
         sessionStorage.removeItem('userToken');
+
     }
     const handleAuthToken = (token) => {
         setAuthToken(token)
