@@ -28,7 +28,7 @@ function PremiumCard() {
     return (
         <div className="w-80 h-auto bg-white dark:bg-darkBg dark:border-darkBorder dark:text-white border border-[#ccc] rounded p-3">
             <div className="flex items-start gap-3">
-                <img className="h-6 w-6" src='/public/Reddit Images/premiumLogo.png' />
+                <img className="h-6 w-6" src='/Reddit Images/premiumLogo.png' />
                 <div className="text-xs">
                     <span className="font-semibold">Reddit Premium</span><br />
                     <span>The best Reddit experience</span>
