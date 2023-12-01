@@ -1,7 +1,7 @@
 import React from "react"
 import { NavLink } from "react-router-dom";
 import MenuIcon from '@mui/icons-material/Menu';
-import { useSidebar } from "../../Provider/SideBarProvider";
+import { useSidebar } from "../../Provider/SidebarProvider";
 function Logo() {
     const {handleSidebar} = useSidebar();
     return (
