@@ -1,15 +1,15 @@
+import React, { useMemo } from "react";
 import Navbar from "./Components/Navbar/Navbar";
 import "./App.css";
 import MainPage from "./Pages/MainPage";
 import { Route, Routes } from "react-router-dom";
 import CreatePostPage from './Pages/CreatePostPage';
-import ComunitiyPage from './Pages/CommunityPage';
+// import ComunitiyPage from './Pages/CommunityPage';
 import { useUser } from "./Provider/UserProvider";
 import UserPage from "./Pages/UserPage";
 import UserProfile from "./Pages/UserProfile";
 import CommentPage from "./Pages/CommentPage";
 import { useLogInOrSignUp } from "./Provider/LoginOrSignUp";
-
 import Chat from "./Components/Chat/Chat";
 import CloseIcon from '@mui/icons-material/Close';
 import { useChat } from "./Provider/ChatProvider";
@@ -18,7 +18,9 @@ import PopUp from "./Components/Pop up/PopUp";
 import SideBar from "./Components/DropDowns/SideBar";
 import { useSidebar } from "./Provider/SideBarProvider";
 import Premium from "./Pages/Premium";
-import { useMemo } from "react";
+import Spinner from "./Components/Loader/Spinner";
+
+const LazyCommunityPage = React.lazy(() => import('./Pages/CommunityPage'));
 export default function App() {
   const { openLogIn } = useLogInOrSignUp();
   const { isChatOpened, isChatMinimized, closeMinimizeChat, openChat } = useChat();
@@ -41,7 +43,9 @@ export default function App() {
         } />
         <Route path="r/:name/:id" element={
           <ProtectedRoutes>
-            <ComunitiyPage />
+            <React.Suspense fallback={<Spinner />}>
+              <LazyCommunityPage />
+            </React.Suspense>
           </ProtectedRoutes>
         } />
         <Route path="/:user/:name/:id" element={
