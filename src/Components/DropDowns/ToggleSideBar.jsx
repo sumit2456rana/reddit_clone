@@ -4,7 +4,7 @@ import arrow from  '../../../assets/down_arrow.svg';
 import SideBar from './SideBar'
 import { useState } from "react";
 import { useParams } from "react-router-dom";
-import { useSidebar } from "../../Provider/SideBarProvider";
+import { useSidebar } from "../../Provider/SidebarProvider";
 function ToggleSideBar() {
   const {handleSidebar} = useSidebar();
   const param = useParams();

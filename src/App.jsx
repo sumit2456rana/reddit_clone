@@ -16,7 +16,7 @@ import { useChat } from "./Provider/ChatProvider";
 import SearchPage from "./Pages/SearchPage";
 import PopUp from "./Components/Pop up/PopUp";
 import SideBar from "./Components/DropDowns/SideBar";
-import { useSidebar } from "./Provider/SideBarProvider";
+import { useSidebar } from "./Provider/SidebarProvider";
 import Premium from "./Pages/Premium";
 import Spinner from "./Components/Loader/Spinner";
 import PageNotFound from "./Pages/PageNotFound";

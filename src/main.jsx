@@ -8,7 +8,7 @@ import { LoginOrSignUp } from './Provider/LoginOrSignUp.jsx'
 import { StatusAndThemeProvider } from './Provider/StatusAndThemeProvider.jsx'
 import { ChatProvider } from './Provider/ChatProvider.jsx'
 import { PopUpProvider } from './Provider/PopUpProvider.jsx'
-import { SidebarProvider } from './Provider/SideBarProvider.jsx'
+import { SidebarProvider } from './Provider/SidebarProvider.jsx';
 ReactDOM.createRoot(document.getElementById('root')).render(
 
   <BrowserRouter>
