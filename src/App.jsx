@@ -19,12 +19,14 @@ import SideBar from "./Components/DropDowns/SideBar";
 import { useSidebar } from "./Provider/SideBarProvider";
 import Premium from "./Pages/Premium";
 import Spinner from "./Components/Loader/Spinner";
+import PageNotFound from "./Pages/PageNotFound";
 
 const LazyCommunityPage = React.lazy(() => import('./Pages/CommunityPage'));
 export default function App() {
   const { openLogIn } = useLogInOrSignUp();
   const { isChatOpened, isChatMinimized, closeMinimizeChat, openChat } = useChat();
   const { isSidebarOpen } = useSidebar();
+  
   function ProtectedRoutes({ children }) {
     const { isUserLoggedIn } = useUser();
     if (!isUserLoggedIn) {
@@ -73,6 +75,7 @@ export default function App() {
             <Premium />
           </ProtectedRoutes>
         } />
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
     ),
     []
