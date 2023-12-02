@@ -38,6 +38,13 @@ function DropDownMenu() {
   function handleComingSoon() {
     addToPopUp({message: "Coming Soon-ish—We Promise It's Worth the Wait!", emotion: 'sad'})
   }
+  function handlePremium() {
+    if(JSON.parse(localStorage.getItem('premium'))){
+      addToPopUp({message: 'Already a PRIME member :)' , emotion: 'happy'});
+    }else{
+      navigate('/premium');
+    }
+  }
   return (
     <div
       className="dark:bg-darkBg fixed top-14 right-[1.5rem] py-4 overflow-y-auto rounded-md styled-scrollbars mt-0.5 w-64 h-[calc(100vh-150px)]  bg-white shadow-2xl"
@@ -59,7 +66,7 @@ function DropDownMenu() {
 
       <DropdownContent handleOnClick={handleCommunity} icon={<img src={recentIcons} className="dark:brightness-0 dark:invert-[1]" />} text="Create a Community" />
       <DropdownContent handleOnClick={handleComingSoon} icon={<img src={advertiseIcon} className="dark:brightness-0 dark:invert-[1]" />} text="Advertise on Reddit" />
-      <DropdownContent icon={<WorkspacePremiumOutlinedIcon />} text="Premium" />
+      <DropdownContent handleOnClick={handlePremium} icon={<WorkspacePremiumOutlinedIcon />} text="Premium" />
       <DropdownContent handleOnClick={handleComingSoon} icon={<CampaignOutlinedIcon />} text="Explore" />
     
       <a href='https://support.reddithelp.com/hc/en-us' target='_blank' className={`dark:hover:bg-darkBgHover h-10 cursor-pointer hover:bg-[rgba(0,0,0,0.04)] w-full pl-[25px] pr-4 font-medium flex items-center`}>

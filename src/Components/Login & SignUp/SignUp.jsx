@@ -37,8 +37,8 @@ function SignUp({ email, handleSetEmail }) {
                 </div>
                 <h1 className="text-2xl font-bold mt-6">Sign Up</h1>
                 <p className="text-sm pt-3">By continuing, you agree to our <span className="text-blue-600 font-semibold cursor-pointer">User Agreement</span> and acknowledge that you understand the <span className="text-blue-600 font-semibold cursor-pointer">Privacy Policy</span>.</p>
-                <ContineWithGoogle img={"https://seeklogo.com/images/G/google-logo-28FA7991AF-seeklogo.com.png"} text="Google" />
-                <ContineWithGoogle img="https://pngfre.com/wp-content/uploads/apple-logo-6-1024x1024.png" text="Apple" />
+                {/* <ContineWithGoogle img={"https://seeklogo.com/images/G/google-logo-28FA7991AF-seeklogo.com.png"} text="Google" />
+                <ContineWithGoogle img="https://pngfre.com/wp-content/uploads/apple-logo-6-1024x1024.png" text="Apple" /> */}
 
                 <Or />
 

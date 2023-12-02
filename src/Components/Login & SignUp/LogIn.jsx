@@ -5,11 +5,13 @@ import { ContineWithGoogle, Or, Input } from "./FormComponents";
 import { useLogInOrSignUp } from "../../Provider/LoginOrSignUp";
 import { useUser } from "../../Provider/UserProvider";
 import { useNavigate } from "react-router-dom";
+import { useAuth0 } from "@auth0/auth0-react";
 function LogIn() {
+    const { loginWithRedirect, user } = useAuth0();
     const { logIn, handleAuthToken, isUserLoggedIn } = useUser();
     const { closeLogIn, openSignUp } = useLogInOrSignUp();
-    const [isLoading , setIsLoading] = useState(false);
-    const [error , setError] = useState("");
+    const [isLoading, setIsLoading] = useState(false);
+    const [error, setError] = useState("");
     const [formInput, setFormInput] = useState({
         email: "",
         password: "",
@@ -24,7 +26,7 @@ function LogIn() {
         })
     }
     async function logInHandler() {
-        if(validateEmail(formInput.email))
+        if (validateEmail(formInput.email))
             try {
                 setIsLoading(true);
                 const resp = await fetch("https://academics.newtonschool.co/api/v1/user/login", {
@@ -40,17 +42,17 @@ function LogIn() {
                 })
                 const loginResp = await resp.json();
                 if (resp.ok) {
-                    
+
                     logIn(loginResp.data);
                     handleAuthToken(loginResp.token);
                     console.log(isUserLoggedIn);
                     setError("");
                     closeLogIn();
-                } 
+                }
                 else {
                     setError(loginResp.message);
                 }
-            } 
+            }
             catch (err) {
                 alert("Something went wrong!!");
             }
@@ -61,11 +63,11 @@ function LogIn() {
     }
     const validateEmail = (email) => {
         return String(email)
-          .toLowerCase()
-          .match(
-            /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-          );
-      };
+            .toLowerCase()
+            .match(
+                /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+            );
+    };
     function onSubmit(e) {
         e.preventDefault();
         logInHandler();
@@ -79,8 +81,8 @@ function LogIn() {
                     </div>
                     <h1 className="text-2xl font-bold mt-6">Log In</h1>
                     <p className="text-sm pt-3">By continuing, you agree to our <span className="text-blue-600 font-semibold cursor-pointer">User Agreement</span> and acknowledge that you understand the <span className="text-blue-600 font-semibold cursor-pointer">Privacy Policy</span>.</p>
-                    <ContineWithGoogle img={"https://seeklogo.com/images/G/google-logo-28FA7991AF-seeklogo.com.png"} text="Google" />
-                    <ContineWithGoogle img="https://pngfre.com/wp-content/uploads/apple-logo-6-1024x1024.png" text="Apple" />
+                    {/* <ContineWithGoogle handleOnClick={loginWithGoogle} img={"https://seeklogo.com/images/G/google-logo-28FA7991AF-seeklogo.com.png"} text="Google" /> */}
+                    {/* <ContineWithGoogle img="https://pngfre.com/wp-content/uploads/apple-logo-6-1024x1024.png" text="Apple" /> */}
 
                     <Or />
 

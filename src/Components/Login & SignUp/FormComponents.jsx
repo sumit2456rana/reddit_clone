@@ -1,6 +1,6 @@
-function ContineWithGoogle({ img, text }) {
+function ContineWithGoogle({ img, text, handleOnClick }) {
     return (
-        <div className="w-full flex items-center border cursor-pointer rounded-3xl border-search dark:bg-white dark:text-black gap-16 mt-5 px-3 py-2 hover:bg-blue-100">
+        <div onClick={handleOnClick} className="w-full flex items-center border cursor-pointer rounded-3xl border-search dark:bg-white dark:text-black gap-16 mt-5 px-3 py-2 hover:bg-blue-100">
             <img src={img} className="h-6 w-6" />
             <p className="mr-14 font-semibold">Continue with {text}</p>
         </div>
