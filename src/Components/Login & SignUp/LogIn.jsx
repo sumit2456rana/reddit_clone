@@ -5,9 +5,7 @@ import { ContineWithGoogle, Or, Input } from "./FormComponents";
 import { useLogInOrSignUp } from "../../Provider/LoginOrSignUp";
 import { useUser } from "../../Provider/UserProvider";
 import { useNavigate } from "react-router-dom";
-import { useAuth0 } from "@auth0/auth0-react";
 function LogIn() {
-    const { loginWithRedirect, user } = useAuth0();
     const { logIn, handleAuthToken, isUserLoggedIn } = useUser();
     const { closeLogIn, openSignUp } = useLogInOrSignUp();
     const [isLoading, setIsLoading] = useState(false);
