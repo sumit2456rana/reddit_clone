@@ -117,7 +117,7 @@
 
 Sumit - sumitrana2396@gmail.com
 
-Project Link: [https://github.com/SashenJayathilaka/Reddit-Clone.git](https://github.com/SashenJayathilaka/Reddit-Clone.git)
+Project Link: [https://github.com/sumit2456rana/reddit_clone](https://github.com/sumit2456rana/reddit_clone)
 
 I am grateful for your visit and hope you enjoy the project!⭐
 <hr />
