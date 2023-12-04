@@ -32,14 +32,16 @@
 
 ## :star2: About the Project
 
-<!-- Screenshots -->
+<p>
+  You can see images of the project in user interaction below. The user starts on the home page, signs up with a new account, selects a subreddit and much more. Detailed descriptions can be found right beneath the images. These images only showcase the most elementary user interactions.
+</p>
 
 ### :camera: Screenshots
 
-- Create Community, Join Community, Leave Community, Upvote and Downvote Posts
+- The clone's home page.
 
 <div align="center">
-<a href="https://reddit-sclone.vercel.app"><img width='800rem' src='./demo/ezgif-5-bba0183ff4.gif' alt='image'/></a>
+  <img width='100%' src='/public/Preview Images/preview1.png' alt='image'/>
 </div>
 
 <br />
