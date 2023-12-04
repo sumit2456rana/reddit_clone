@@ -113,7 +113,7 @@
 - Javascript
 - Tailwind CSS
 
-## :handshake: Contact
+## Contact 🤝
 
 Sumit - sumitrana2396@gmail.com
 
