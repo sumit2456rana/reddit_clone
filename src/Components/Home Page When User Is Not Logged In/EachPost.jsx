@@ -7,7 +7,7 @@ import ChannelOverview from "../Home Page When User Is Logged In/ChannelOverview
 function EachPost({postData}) {
     const {commentCount, content , likeCount} = postData;
     const {image , name } = postData.channel;
-    const authorName = postData.author.name; 
+    const authorName = postData.author.name;
     const {logout} = useUser();
     const [showChannelOverview , setShowChannelOverview] = useState(false);
     return (

@@ -48,9 +48,6 @@ function CommunitiyPage() {
   return (
     <div className="pages px-0 dark:bg-[#030303]">
       <CommunityHeading name={data.name} image={data.image} view={view} />
-
-
-
       <div className="max-w-full flex justify-center mx-auto my-0 lg:px-6 py-4 px-2">
         <div className={`${view === 'card' ? 'lg:w-[640px]' : 'lg:w-full'}`}>
           <CreatePostTab />

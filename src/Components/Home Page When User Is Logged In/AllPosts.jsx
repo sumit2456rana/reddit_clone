@@ -10,7 +10,7 @@ import { useUser } from "../../Provider/UserProvider";
 import { usePopup } from "../../Provider/PopUpProvider";
 function AllPosts() {
     const [posts, setPosts] = useState([]);
-    const [page, setPage] = useState(1);
+    const [page, setPage] = useState(2);
     const [hasMore, setHasMore] = useState(true);
     const { authToken } = useUser();
     const { addToPopUp } = usePopup();
@@ -91,17 +91,17 @@ function AllPosts() {
             }
         >
             {posts.map((post, index) => (
-                <NavLink to={`/r/${post.channel.name}/comments/${post._id}`} key={index} className="bg-white border dark:hover:border-white dark:bg-darkBg dark:border-darkBorder dark:text-white border-[#ccc] rounded h-auto my-4 w-full flex">
+                <NavLink to={`/r/${post.channel?.name}/comments/${post._id}`} key={index} className="bg-white border dark:hover:border-white dark:bg-darkBg dark:border-darkBorder dark:text-white border-[#ccc] rounded h-auto my-4 w-full flex">
                     <Vote likes={post.likeCount} onvote={type => handleVote(post._id, type)} />
                     <PostContent
                         content={post.content}
-                        name={post.channel.name}
+                        name={post.channel?.name}
                         authorName={post.author.name}
-                        image={post.channel.image}
+                        image={post.channel?.image}
                         comment={post.commentCount}
-                        channelId={post.channel._id}
+                        channelId={post.channel?._id}
                         authorId={post.author._id}
-                        pathName={`/r/${post.channel.name}/comments/${post._id}`}
+                        pathName={`/r/${post.channel?.name}/comments/${post._id}`}
                     />
                 </NavLink>
             ))}

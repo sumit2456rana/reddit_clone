@@ -9,7 +9,7 @@ import PostViewMenu from "../Posts/PostViewMenu";
 import { NavLink, useNavigate } from "react-router-dom";
 function HomePage({ setView, view }) {
   const [posts, setPosts] = useState([]);
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState(2);
   const [hasMore, setHasMore] = useState(true);
   const fetchPosts = useCallback(async (page) => {
     try {
